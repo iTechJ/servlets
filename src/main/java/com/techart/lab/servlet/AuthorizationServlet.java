@@ -10,19 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Created by alexander on 3/5/17.
- */
-@WebServlet(value = "/authorization-servlet")
+@WebServlet(value = "/authorization")
 public class AuthorizationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
+
         User user = new User(login, password);
-        //check in db
+
         request.setAttribute("user", user);
+
         RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/success-authorization.jspx");
         requestDispatcher.forward(request, response);
     }

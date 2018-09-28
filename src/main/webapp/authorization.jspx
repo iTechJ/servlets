@@ -4,7 +4,7 @@
     <jsp:directive.page contentType="text/html; charset=Utf-8" isELIgnored="false"/>
     <html>
     <body>
-    <form name="registrationForm" method="POST" action="registration-servlet">
+    <form name="registrationForm" method="POST" action="authorization">
         Login:<br/>
         <input type="text" name="login"/>
         <br/>
